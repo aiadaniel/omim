@@ -205,6 +205,9 @@ void CrossMwmGraph::GetOutgoingEdgesList(BorderCross const & v,
                                              };
   CHECK(currentContext.ForEachIngoingNodeNearPoint(v.toNode.point, findingFn), ());
 
+  if (!found)
+    return;
+
   CHECK(found, ());
 
   // Find outs. Generate adjacency list.
